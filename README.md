@@ -1,4 +1,4 @@
-## 📖 Repositorio de Canvas LMS con Docker
+##  Canvas LMS Dockerizado
 
 Este repositorio contiene las configuraciones de Docker para ejecutar [Canvas LMS](https://github.com/instructure/canvas-lms) en un entorno de contenedores. Es un fork de [canvas-lms-docker](https://github.com/ahamana/canvas-lms-docker).
 
