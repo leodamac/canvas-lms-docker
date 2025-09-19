@@ -95,30 +95,60 @@ sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/b
 
 Con Docker y Task instalados, puedes configurar y ejecutar el entorno rápidamente.
 
-#### **Configuración basada en Debian**
+1.  Clonar y acceder al repositorio:
+   
+   ```bash
+   git clone https://github.com/leodamac/canvas-lms-docker.git
+   cd canvas-lms-docker
+   ```
 
-```bash
-task setup DISTRIBUTION=debian
-```
+## **Configuración basada en Debian**
+### Las imágenes de Debian son más grandes, pero ofrecen un entorno más completo y familiar para los desarrolladores
 
-#### **Configuración basada en Alpine**
+  Carga y genera los datos necesarios para trabajar con canvas.
+  
+  ```bash
+  task setup DISTRIBUTION=debian
+  ```
+  
+  #### **Ejecutar**
+  - Ejecuta el servicio de canvas (para acceder solo ingresa en el navegador a http://localhost:80)
+  
+  ```bash
+  task run DISTRIBUTION=debian
+  ```
+  
+  #### 🛑Apagar el Entorno
+  
+  - Para detener los servicios
+  
+  ```bash
+  task shutdown DISTRIBUTION=debian
+  ```
 
-```bash
-task setup DISTRIBUTION=alpine
-```
+## **Configuración basada en Alpine**
+### Alpine es una distribución de Linux ultra-ligera diseñada específicamente para contenedores y pruebas rápidas.
 
-#### **Ejecutar en Debian**
-
-```bash
-task run DISTRIBUTION=debian
-```
-
-#### **Ejecutar en Alpine**
-
-```bash
-task run DISTRIBUTION=alpine
-```
-
+  Carga y genera los datos necesarios para trabajar con canvas.
+  
+  ```bash
+  task setup DISTRIBUTION=alpine
+  ```
+  
+  #### **Ejecutar**
+  - Ejecuta el servicio de canvas (para acceder solo ingresa en el navegador a http://localhost:80)
+  
+  ```bash
+  task run DISTRIBUTION=alpine
+  
+  ```
+  #### 🛑 Apagar el Entorno
+  
+  - Para detener los servicios
+  
+  ```bash
+  task shutdown DISTRIBUTION=alpine
+  ```
 -----
 
 ### ⚙️ Configuración
@@ -147,27 +177,10 @@ El entorno se configura a través del archivo **`.env`**, el cual contiene todas
   * **Base de Datos**: PostgreSQL
   * **Caché**: Redis
   * **Pruebas de Correo**: Mailpit (accesible en `http://localhost:8025`)
-  * **Interfaz de Canvas LMS**: `http://localhost`
+  * **Interfaz de Canvas LMS**: `http://localhost:80`
 
 -----
 
-### 🛑 Apagar el Entorno
-
-Para detener los servicios, usa los siguientes comandos:
-
-#### **Apagado en Debian**
-
-```bash
-task shutdown DISTRIBUTION=debian
-```
-
-#### **Apagado en Alpine**
-
-```bash
-task shutdown DISTRIBUTION=alpine
-```
-
------
 
 ### 📜 Licencia
 
