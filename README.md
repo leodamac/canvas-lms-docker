@@ -18,7 +18,7 @@ Este repositorio contiene las configuraciones de Docker para ejecutar [Canvas LM
 Para comenzar, necesitarás instalar **Docker** y **Docker Compose**, además de **Task**.
 
 <details>
-<summary>Cómo instalar Docker, Docker Compose y Task</summary>
+<summary>Click para ver Cómo instalar Docker, Docker Compose y Task</summary>
 
 -----
 
